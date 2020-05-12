@@ -9,7 +9,29 @@
 </head>
 <body>
     <div id="app">
-    </div>
+        <h1>Countries App</h1>
+    
+        <div id ="filterInput">
+            <h3>Find Country by name:</h3>
+            <input type="text" v-model="filterCountry"/>
+          </div>
+    
+        <section>
+            <h2>Filtered Countries</h2>
+            <div v-for="country in countries" v-if="country.name === filterCountry">
+              <p><strong>{{country.name }}</strong> Population: {{ country.population }}</p>
+            </div>
+          </section>
+    
+          <section>
+              <h2>All Countries</h2>
+            <div v-for="country in countries">
+              <p><strong>{{country.name }}</strong> Population: {{ country.population }}</p>
+            </div>
+          </section>
+    
+      </div>
+    
     
 </body>
 </html>
